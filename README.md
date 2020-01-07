@@ -1,5 +1,5 @@
-
 # tailtrigger
+[![Build Status](https://travis-ci.com/nxadm/itailtrigger.svg?branch=master)](https://travis-ci.com/nxadm/ctwrapper)
 
 Trigger actions by matching regexes in files
 
