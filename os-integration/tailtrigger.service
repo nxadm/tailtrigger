@@ -1,0 +1,20 @@
+[Unit]
+Description=tailtrigger
+#After=slapd.service
+#Requires=slapd.service
+
+[Service]
+Restart=on-failure
+TimeoutStartSec=60
+#WorkingDirectory=/var/tmp
+#Environment=
+ExecStart=tailtrigger -c /etc/tailtrigger.yaml
+KillMode=control-group
+SuccessExitStatus=0
+#StandardOutput=syslog
+#StandardError=syslog
+#SyslogIdentifier=tailtrigger
+
+[Install]
+WantedBy=multi-user.target
+

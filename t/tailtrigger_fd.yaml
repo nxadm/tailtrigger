@@ -1,0 +1,14 @@
+---
+'/var/log/syslog':
+  triggers:
+    password-lock:
+      match-regex: '.+'
+      actions:
+        syslog:
+          type: local
+          run-template: "sleep 10"
+        remote-server-1:
+          type: rest
+          url-template: 'http://localhost/v1/foo?action=lock?date={{ .datetime }}'
+          user: foo
+          pass: bar

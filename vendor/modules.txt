@@ -1,0 +1,16 @@
+# github.com/fsnotify/fsnotify v1.4.7
+github.com/fsnotify/fsnotify
+# github.com/nxadm/tail v1.4.1
+github.com/nxadm/tail
+github.com/nxadm/tail/ratelimiter
+github.com/nxadm/tail/util
+github.com/nxadm/tail/watch
+github.com/nxadm/tail/winfile
+# github.com/spf13/pflag v1.0.5
+github.com/spf13/pflag
+# golang.org/x/sys v0.0.0-20190904154756-749cb33beabd
+golang.org/x/sys/unix
+# gopkg.in/tomb.v1 v1.0.0-20141024135613-dd632973f1e7
+gopkg.in/tomb.v1
+# gopkg.in/yaml.v3 v3.0.0-20191119115237-b5595aa38866
+gopkg.in/yaml.v3

@@ -1,0 +1,57 @@
+# modify 1539157572 dc=something,dc=be cn=Manager,dc=something,dc=be  conn=-1
+dn: uid=r0000001,ou=people,dc=something,dc=be
+changetype: modify
+add: pwdFailureTime
+pwdFailureTime: 20181010074612.158822Z
+-
+replace: pwdAccountLockedTime
+pwdAccountLockedTime: 20181010074612Z
+-
+replace: entryCSN
+entryCSN: 20181010074612.158942Z#000000#001#000000
+-
+replace: modifiersName
+modifiersName: cn=Manager,dc=something,dc=be
+-
+replace: modifyTimestamp
+modifyTimestamp: 20181010074612Z
+-
+# end modify 1539157572
+
+# modify 1539157573 dc=something,dc=be cn=Manager,dc=something,dc=be  conn=-1
+dn: uid=r0222222,ou=people,dc=something,dc=be
+changetype: modify
+add: pwdFailureTime
+pwdFailureTime: 20181010074613.158822Z
+-
+replace: pwdAccountLockedTime
+pwdAccountLockedTime: 20181010074613Z
+-
+replace: entryCSN
+entryCSN: 20181010074612.158942Z#000000#001#000000
+-
+replace: modifiersName
+modifiersName: cn=Manager,dc=something,dc=be
+-
+replace: modifyTimestamp
+modifyTimestamp: 20181010074613Z
+-
+# end modify 1539157573
+
+# modify 1490951610 dc=something,dc=be cn=manager,dc=something,dc=be IP=10.112.43.47:59290 conn=79460650
+dn: uid=s1000000,ou=people,dc=something,dc=be
+changetype: modify
+delete: pwdFailureTime
+-
+delete: pwdAccountLockedTime
+-
+replace: entryCSN
+entryCSN: 20170331091330.830810Z#000000#001#000000
+-
+replace: modifiersName
+modifiersName: cn=manager,dc=something,dc=be
+-
+replace: modifyTimestamp
+modifyTimestamp: 20170331091330Z
+-
+# end modify 1490951610
