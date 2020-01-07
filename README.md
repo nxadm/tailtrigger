@@ -7,7 +7,7 @@ Trigger actions by matching regexes in files
 
 ```text
 $ tailtrigger -h
-tailtrigger, 0.5.0.
+tailtrigger, 0.5.1.
 Trigger actions by matching regexes in logfiles.
 See https://github.com/nxadm/tailtrigger for more information.
 Author: Claudio Ramirez <pub.claudio@gmail.com>
@@ -22,7 +22,7 @@ Usage:
 Parameters:
   -c  | --config        : Configuration file [default: config.yaml].
   -d  | --debug         : Log extra runtime information.
-  -t  | --timeout       : timeout seconds for actions [default: 5]
+  -t  | --timeout       : timeout seconds for actions [default: 0]
   -s  | --sample-config : Print a sample configuration.
   -h  | --help          : This help message.
   -v  | --version       : Version message.
@@ -43,21 +43,19 @@ Parameters:
 # begin/end text) and 's' lets '.' also match '\n'.
 #
 # Each configuration block contains named 'triggers'. In turn, each trigger
-# contains a 'match-regex'. When matched named 'actions' wil be run. Each
-# action is of a certain type ('local', 'rest') and has corresponding
-# attributes:
-# - type 'local' runs local programs and needs a 'watch-template'.
-# - type 'rest' sends a REST request and needs a 'url-template',
-# a 'http-verb' (default POST) and optionally a 'json-template',
-# a Basic Auth 'user' and 'pass'.
+# contains a 'match-regex'. When matched named 'actions' wil be watch. Each
+# action of a certain type ('local', 'rest') and has corresponding attributes.
+# Type 'local' runs local programs and needs a 'watch-template'. Type 'rest'
+# send a REST request and needs a 'url-template', a 'http-verb' (default POST)
+# and optionally a 'json-template', a Basic Auth 'user' and 'pass'.
 #
 # The regexes and templates must be provided in the syntax of the Go language
-# (see link below). When named captures are used, their values are accessible.
-# E.g. the match of "(?P<name>)" can be retrieve with the "{{ .username }}"
-# template syntax.
-
-# The configuration file itself is valid YAML, so muli-tine constructs (next
-# line + indent, '>', '|') can be used when providing long regexes or templates.
+# (see link below). The use of *-template instead of literal values are meant
+# to allow the use of the values of named captures in the 'match-regex'. When
+# named captures are used (?P<name>), templates will receive the value of the
+# captures as '.name', e.g. '{{ .username }}'. The configuration file itself
+# is valid YAML, so muli-tine constructs (next line + indent, '>', '|') can
+# be used when providing long regexes or templates.
 #
 # Regex and template values starting with '@' (you need to quote these strings
 # in YAML) are expanded to the contents of the file they reference. Their path
