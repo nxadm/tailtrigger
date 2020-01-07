@@ -7,7 +7,7 @@ import (
 	"time"
 )
 
-const version = "0.5.1"
+const version = "0.5.2"
 const website = "https://github.com/nxadm/tailtrigger"
 const author = "Claudio Ramirez <pub.claudio@gmail.com>"
 const defaultConfigFile = "tailtrigger.yaml"
